@@ -1,7 +1,10 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
-export const App = () => {
+const App = () => {
   return (
-    <div className='bg-black'>App</div>
+   <Navbar />
   )
 }
+
+export default App
