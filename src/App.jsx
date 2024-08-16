@@ -4,7 +4,7 @@ import Header from "./components/Header";
 
 const App = () => {
   return (
-    <div className="flex flex-row ">
+    <div className="w-[100vw] flex justify-center flex-row">
       <Navbar />
       <Header />
     </div>
