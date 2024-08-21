@@ -1,12 +1,12 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 const App = () => {
   return (
-    <div className="w-[100vw] flex justify-center flex-row">
+    <div className="w-[100vw] font-poppins overflow-x-hidden flex justify-center flex-row bg-[rgb(31,41,55)]">
       <Navbar />
-      <Header />
+      <Hero />
     </div>
   );
 };

@@ -128,18 +128,26 @@ const Navbar = () => {
             </li>
           </ul>
           <div className="profile w-[17vw] gap-4 my-6 flex hover:bg-gray-700 items-center transition-colors rounded-full p-3 text-white">
-            <div>profile</div>
-            <div className="flex gap-10">
             <div>
-            <div className="">user</div>
-            <div>username</div>
+              <img
+                className="h-10 w-10 rounded-full"
+                src="https://picsum.photos/10?random=2"
+                width={12}
+                height={12}
+                alt="userPic"
+              />
             </div>
-            <div className="text-3xl">...</div>
+            <div className="flex gap-10">
+              <div>
+                <div className="">user</div>
+                <div className="text-gray-500">@username</div>
+              </div>
+              <div className="text-3xl">...</div>
             </div>
           </div>
         </div>
       </aside>
-      <div className="w-[0.2vw] bg-black h-screen"></div>
+      <div className="w-[0.2vw] bg-black h-full" />
     </div>
   );
 };
