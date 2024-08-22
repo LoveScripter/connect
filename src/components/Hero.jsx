@@ -8,7 +8,6 @@ const Hero = () => {
 
   const handleClick = () => {
     let file = inputFile.current.click();
-    console.log(file);
   };
 
   return (
