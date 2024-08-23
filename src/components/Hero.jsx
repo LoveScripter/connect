@@ -12,7 +12,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="flex text-white">
+      <div className="flex text-white justify-center">
         <div className="flex flex-col">
           <div className="w-[60vw] text-white bg-[rgb(31,41,55)] text-xl">
             <div className="w-full flex justify-center items-center flex-row">
@@ -29,7 +29,7 @@ const Hero = () => {
             <div className="flex flex-row gap-10 p-6">
               <label htmlFor="text">
                 <img
-                  className="h-10 w-10 rounded-full"
+                  className="h-10 w-11 rounded-full"
                   src="https://picsum.photos/10?random=2"
                   width={12}
                   height={12}
@@ -57,7 +57,7 @@ const Hero = () => {
                 />
               </div>
               <div className="post">
-                <button className="bg-blue-600 w-[6vw] p-2 rounded-3xl">
+                <button className="bg-blue-600 hover:bg-blue-500 transition-colors font-bold w-[6vw] p-2 rounded-3xl">
                   Post
                 </button>
               </div>
