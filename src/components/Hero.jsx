@@ -13,8 +13,8 @@ const Hero = () => {
   return (
     <>
       <div className="flex text-white justify-center">
-        <div className="flex flex-col">
-          <div className="w-[60vw] text-white bg-[rgb(31,41,55)] text-xl">
+        <div className="flex flex-col w-[56vw]">
+          <div className="text-white bg-[rgb(31,41,55)] text-xl">
             <div className="w-full flex justify-center items-center flex-row">
               <div className="w-1/2 text-center hover:bg-slate-600 p-4 transition-colors">
                 For you

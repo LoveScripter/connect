@@ -9,11 +9,8 @@ import { PiSignOut } from "react-icons/pi";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-start">
-      <aside
-        className=" fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0"
-        aria-label="Sidebar"
-      >
+    <div className="flex justify-start items-start">
+      <aside className="sticky top-0 left-0 z-40 h-screen">
         <div className="h-full flex flex-col justify-between px-3 py-4 bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium">
             <li>

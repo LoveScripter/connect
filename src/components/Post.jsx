@@ -1,5 +1,5 @@
 import React from "react";
-import { CgMore } from "react-icons/cg";
+import { GrMore } from "react-icons/gr";
 import { BiComment } from "react-icons/bi";
 import { FaRetweet } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
@@ -20,7 +20,7 @@ const Post = () => {
 
   return (
     <>
-      <div className="flex p-5 items-center w-[60vw] hover:bg-[rgb(35,46,61)] transition-all">
+      <div className="flex p-5 items-center w-[56vw] hover:bg-[rgb(35,46,61)] transition-all">
         <div className="flex justify-between">
           <div className="flex gap-2">
             <div>
@@ -100,10 +100,10 @@ const Post = () => {
           </div>
           <div>
             <div
-              className="flex text-3xl relative cursor-pointer"
+              className="flex text-2xl items-center relative cursor-pointer"
               onClick={handleClick}
             >
-              <CgMore />
+              <GrMore />
             </div>
             <ul
               className="hidden absolute right-[296px] bg-slate-950 w-28 rounded-xl flex-col items-end"
