@@ -1,25 +1,38 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from './components/Home.jsx';
-import App from './App.jsx'
-import './index.css'
-import NotFound from './components/NotFound.jsx';
+import { Auth0Provider } from "@auth0/auth0-react";
+import Home from "./components/Home.jsx";
+import App from "./App.jsx";
+import "./index.css";
+import NotFound from "./components/NotFound.jsx";
+import Login from "./components/Login.jsx";
 
 const router = createBrowserRouter([
   {
-    path:'/',
-    element: <Home />
+    path: "/",
+    element: <Home />,
   },
   {
-    path:'*',
-    element: <NotFound />
+    path: "*",
+    element: <NotFound />,
   },
-  
+  {
+    path: "/login",
+    element: <Login />,
+  },
 ]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
-)
+    <Auth0Provider
+      domain="dev-4nhbe760qdh7ceyz.us.auth0.com"
+      clientId="fMYigT2F1BaDrrmNEriFsIBPXq86susY"
+      authorizationParams={{
+        redirect_uri: window.location.origin,
+      }}
+    >
+      <RouterProvider router={router} />
+    </Auth0Provider>
+  </StrictMode>
+);
