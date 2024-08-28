@@ -7,19 +7,23 @@ import App from "./App.jsx";
 import "./index.css";
 import NotFound from "./components/NotFound.jsx";
 import Login from "./components/Login.jsx";
+import ErrorPage from "./components/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "*",
     element: <NotFound />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/login",
     element: <Login />,
+    errorElement: <ErrorPage />,
   },
 ]);
 

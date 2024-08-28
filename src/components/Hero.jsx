@@ -12,7 +12,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="flex text-white justify-center">
+      <div className="flex text-white justify-center border-x-2 border-black">
         <div className="flex flex-col w-[56vw]">
           <div className="text-white bg-[rgb(31,41,55)] text-xl">
             <div className="w-full flex justify-center items-center flex-row">
@@ -66,7 +66,6 @@ const Hero = () => {
           <div className="w-full bg-black h-[0.2vh]" />
           <Post />
         </div>
-        <div className="w-[0.2vw] bg-black h-full" />
       </div>
     </>
   );
