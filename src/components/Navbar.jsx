@@ -6,10 +6,11 @@ import { BiUser } from "react-icons/bi";
 import { BiBookmark } from "react-icons/bi";
 import { PiSignIn } from "react-icons/pi";
 import { PiSignOut } from "react-icons/pi";
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0, User } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const { logout, user, isLoading } = useAuth0();
+  console.log('current user', user)
 
   return (
     <>
@@ -130,7 +131,7 @@ const Navbar = () => {
                 <div>
                   <img
                     className="h-10 w-10 rounded-full"
-                    src="https://picsum.photos/10?random=2"
+                    src={user.picture}
                     width={12}
                     height={12}
                     alt="userPic"
@@ -138,8 +139,8 @@ const Navbar = () => {
                 </div>
                 <div className="flex gap-10">
                   <div>
-                    <div className=""></div>
-                    <div className="text-gray-500">@username</div>
+                    <div className="">{user.name}</div>
+                    <div className="text-gray-500">@{user.nickname}</div>
                   </div>
                   <div className="text-3xl">...</div>
                 </div>
