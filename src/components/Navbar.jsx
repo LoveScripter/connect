@@ -6,12 +6,9 @@ import { BiUser } from "react-icons/bi";
 import { BiBookmark } from "react-icons/bi";
 import { PiSignIn } from "react-icons/pi";
 import { PiSignOut } from "react-icons/pi";
-import { useAuth0, User } from "@auth0/auth0-react";
+
 
 const Navbar = () => {
-  const { logout, user, isLoading } = useAuth0();
-  console.log('current user', user)
-
   return (
     <>
       <div>
@@ -112,16 +109,7 @@ const Navbar = () => {
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <PiSignOut className="w-8 h-8" />
-                    <span
-                      onClick={() =>
-                        logout({
-                          logoutParams: {
-                            returnTo: "http://localhost:5173/login",
-                          },
-                        })
-                      }
-                      className="text-xl flex-1 ms-3 whitespace-nowrap"
-                    >
+                    <span className="text-xl flex-1 ms-3 whitespace-nowrap">
                       Sign Out
                     </span>
                   </a>
@@ -131,7 +119,7 @@ const Navbar = () => {
                 <div>
                   <img
                     className="h-10 w-10 rounded-full"
-                    src={user.picture}
+                    src=""
                     width={12}
                     height={12}
                     alt="userPic"
@@ -139,8 +127,8 @@ const Navbar = () => {
                 </div>
                 <div className="flex gap-10">
                   <div>
-                    <div className="">{user.name}</div>
-                    <div className="text-gray-500">@{user.nickname}</div>
+                    <div className="">User</div>
+                    <div className="text-gray-500">@Username</div>
                   </div>
                   <div className="text-3xl">...</div>
                 </div>

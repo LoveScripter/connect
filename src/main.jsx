@@ -8,6 +8,7 @@ import "./index.css";
 import NotFound from "./components/NotFound.jsx";
 import Login from "./components/Login.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
+import UserProfile from "./components/UserProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/profile",
+    element: <UserProfile />,
     errorElement: <ErrorPage />,
   },
 ]);

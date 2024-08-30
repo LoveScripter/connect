@@ -1,28 +1,61 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useState } from 'react';
 
-const Login = () => {
-  const { loginWithRedirect } = useAuth0();
+const LoginPageDark = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Email:', email);
+    console.log('Password:', password);
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
-      <div className="bg-gray-800 p-10 rounded-xl shadow-2xl max-w-sm w-full">
-        <h2 className="text-3xl text-white font-extrabold mb-8 text-center">
-          Welcome
-        </h2>
-        <p className="text-gray-400 text-center mb-6">
-          Please login to continue
-        </p>
-        <button
-          onClick={() => loginWithRedirect()}
-          className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300"
-          type="button"
-        >
-          Login
-        </button>
+    <div className="flex items-center justify-center h-screen bg-black">
+      <div className="w-full max-w-md p-8 bg-gray-900 rounded-lg shadow-lg">
+        <h2 className="text-3xl font-bold text-center text-white mb-8">Log in to Connect</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+          >
+            Log in
+          </button>
+        </form>
+        <div className="mt-6 text-center">
+          <a href="#" className="text-blue-400 hover:underline">
+            Forgot password?
+          </a>
+        </div>
+        <div className="mt-6 text-center">
+          <span className="text-gray-500">Don't have an account?</span>{' '}
+          <a href="#" className="text-blue-400 hover:underline">
+            Sign up
+          </a>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default LoginPageDark;
