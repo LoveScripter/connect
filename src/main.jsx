@@ -1,7 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Auth0Provider } from "@auth0/auth0-react";
 import Home from "./components/Home.jsx";
 import App from "./App.jsx";
 import "./index.css";
@@ -9,6 +8,8 @@ import NotFound from "./components/NotFound.jsx";
 import Login from "./components/Login.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import UserProfile from "./components/UserProfile.jsx";
+import Signup from "./components/signup.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -31,18 +32,15 @@ const router = createBrowserRouter([
     element: <UserProfile />,
     errorElement: <ErrorPage />,
   },
+  {
+    path: "/signup",
+    element: <Signup />,
+    errorElement: <ErrorPage />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Auth0Provider
-      domain="dev-4nhbe760qdh7ceyz.us.auth0.com"
-      clientId="80tkpvRPVirEfJdDy2OC1eFhziabmSvy"
-      authorizationParams={{
-        redirect_uri: window.location.origin,
-      }}
-    >
       <RouterProvider router={router} />
-    </Auth0Provider>
   </StrictMode>
 );
