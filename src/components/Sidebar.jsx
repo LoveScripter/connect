@@ -3,7 +3,7 @@ import { BiSearch } from "react-icons/bi";
 
 const Sidebar = () => {
   return (
-    <div className="flex justify-end w-full">
+    <div className="flex justify-end w-[30vw]">
       <div className="flex flex-col w-full">
         <div className="flex relative justify-center py-4">
         <input
