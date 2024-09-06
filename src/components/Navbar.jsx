@@ -6,6 +6,7 @@ import { BiUser } from "react-icons/bi";
 import { BiBookmark } from "react-icons/bi";
 import { PiSignIn } from "react-icons/pi";
 import { PiSignOut } from "react-icons/pi";
+import { Link,Outlet } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -17,8 +18,8 @@ const Navbar = () => {
             <div className="h-full flex flex-col justify-between px-3 py-4 bg-gray-50 dark:bg-gray-800">
               <ul className="space-y-2 font-medium">
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <svg
@@ -42,34 +43,36 @@ const Navbar = () => {
                         strokeLinecap="round"
                       />
                     </svg>
+                    <Link to='/'>
                     <span className="text-3xl">Connect</span>
-                  </a>
+                    </Link>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <BiHome className="w-8 h-8" />
                     <span className="text-xl flex-1 ms-3 whitespace-nowrap">
                       Home
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <BiSearch className="w-8 h-8" />
                     <span className="text-xl flex-1 ms-3 whitespace-nowrap">
                       Explore
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <BsInbox className="w-8 h-8" />
@@ -79,40 +82,40 @@ const Navbar = () => {
                     <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
                       3
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/profile"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <BiUser className="w-8 h-8" />
                     <span className="text-xl flex-1 ms-3 whitespace-nowrap">
                       Profile
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <BiBookmark className="w-8 h-8" />
                     <span className="text-xl flex-1 ms-3 whitespace-nowrap">
                       Bookmarks
                     </span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    to="/login"
                     className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                   >
                     <PiSignOut className="w-8 h-8" />
                     <span className="text-xl flex-1 ms-3 whitespace-nowrap">
                       Sign Out
                     </span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <div className="profile w-[17vw] gap-4 my-6 flex hover:bg-gray-700 items-center transition-colors rounded-full p-3 text-white">
