@@ -9,6 +9,7 @@ import Login from "./components/Login.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import UserProfile from "./components/UserProfile.jsx";
 import Signup from "./components/signup.jsx";
+import Bookmark from "./components/Bookmark.jsx";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <Signup />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/bookmark",
+    element: <Bookmark />,
     errorElement: <ErrorPage />,
   },
 ]);
