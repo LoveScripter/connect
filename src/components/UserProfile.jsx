@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 
 const UserProfile = () => {
+
   return (
     <div className="bg-gray-900 text-white min-h-screen flex">
       {/* Navbar */}
