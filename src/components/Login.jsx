@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const LoginPageDark = () => {
   const [email, setEmail] = useState('');
@@ -49,9 +50,9 @@ const LoginPageDark = () => {
         </div>
         <div className="mt-6 text-center">
           <span className="text-gray-500">Don't have an account?</span>{' '}
-          <a href="#" className="text-blue-400 hover:underline">
+          <Link to="/signup" className="text-blue-400 hover:underline">
             Sign up
-          </a>
+          </Link>
         </div>
       </div>
     </div>
