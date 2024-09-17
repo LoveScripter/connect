@@ -64,10 +64,25 @@ const Signup = () => {
               <input
                 type="text"
                 placeholder="Enter your Name"
-                {...register("name")}
+                {...register("name", {
+                  required: { value: true, message: "Name is required" },
+                  minLength: {
+                    value: 2,
+                    message: "Name should contain at least 3 letters",
+                  },
+                  maxLength: {
+                    value: 10,
+                    message: "Name should not exceed 10 letters",
+                  },
+                })}
                 className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
                 required
               />
+              {errors.name && (
+                <p className="text-xl py-1 text-red-600">
+                  {errors.name.message}
+                </p>
+              )}
             </div>
             <div>
               <input
@@ -97,28 +112,59 @@ const Signup = () => {
               <input
                 type="email"
                 placeholder="Enter your Email"
-                {...register("email")}
+                {...register("email", {
+                  required: { value: true, message: "Email is required" },
+                  pattern: {
+                    value: new RegExp(
+                      "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+                    ),
+                    message: "Please enter a valid email",
+                  },
+                })}
                 className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
                 required
               />
+              {errors.email && (
+                <p className="text-xl py-1 text-red-600">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
             <div>
               <input
                 type="password"
                 placeholder="Enter your Password"
-                {...register("password")}
+                {...register("password", {
+                  required: { value: true, message: "Password is required" },
+                  minLength: {
+                    value: 3,
+                    message: "Password should contain at least 4 letters",
+                  },
+                })}
                 className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
                 required
               />
+              {errors.password && (
+                <p className="text-xl py-1 text-red-600">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
             <div>
               <input
                 type="password"
                 placeholder="Confirm Password"
-                {...register("cpassword")}
+                {...register("cPassword", {
+                  required: { value: true, message: "You need to confirm your password" }
+                })}
                 className="w-full px-4 py-2 bg-gray-800 border border-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
                 required
               />
+              {errors.cPassword && (
+                <p className="text-xl py-1 text-red-600">
+                  {errors.cPassword.message}
+                </p>
+              )}
             </div>
             <button
               type="submit"
