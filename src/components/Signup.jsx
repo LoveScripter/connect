@@ -6,6 +6,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Signup = () => {
+
+  const [profile, setProfile] = useState(null)
+
   const {
     register,
     handleSubmit,
@@ -25,6 +28,16 @@ const Signup = () => {
     await delay(4);
     console.log(data);
   };
+
+  const onImage = (event) => {
+    if(event.target.files && event.target.files[0]){
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        setProfile(e.target.result);
+      }
+      reader.readAsDataURL(event.target.files[0])
+    }
+  }
 
   return (
     <>
@@ -64,7 +77,7 @@ const Signup = () => {
           >
             <div className="flex justify-center relative">
               <img
-                src="src\assets\react.svg"
+                src={profile}
                 alt="Profile"
                 width={70}
                 height={70}
@@ -81,6 +94,8 @@ const Signup = () => {
                 type="file"
                 name="picture"
                 id="profilePic"
+                {...register("image")}
+                onChange={onImage}
               />
             </div>
             <div>
