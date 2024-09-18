@@ -77,7 +77,7 @@ const Signup = () => {
           >
             <div className="flex justify-center relative">
               <img
-                src={profile}
+                src={profile ? profile : "src/assets/react.svg"}
                 alt="Profile"
                 width={70}
                 height={70}
