@@ -1,5 +1,7 @@
 import express from 'express'
+import connectDB from './db'
 import cors from 'cors'
+
 const app = express()
 const port = 3000
 

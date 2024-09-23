@@ -1,13 +1,24 @@
 import React from "react";
 import Post from "./Post";
 import { GrGallery } from "react-icons/gr";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Hero = () => {
   const inputFile = useRef(null);
+  const [profile, setProfile] = useState(null)
 
   const handleClick = () => {
     let file = inputFile.current.click();
+  };
+
+  const onProfile = (event) => {
+    if (event.target.files && event.target.files[0]) {
+      let reader = new FileReader();
+      reader.onload = (e) => {
+        setProfile(e.target.result);
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
   };
 
   return (
@@ -16,10 +27,10 @@ const Hero = () => {
         <div className="flex flex-col w-[56vw]">
           <div className="text-white bg-[rgb(31,41,55)] text-xl">
             <div className="w-full flex justify-center items-center flex-row">
-              <div className="w-1/2 text-center hover:bg-slate-600 p-4 transition-colors">
+              <div className="w-1/2 cursor-pointer active:border-blue-700 active:border-b-2 text-center hover:bg-slate-600 p-4 transition-colors">
                 For you
               </div>
-              <div className="w-1/2 text-center hover:bg-slate-600 p-4 transition-colors">
+              <div className="w-1/2  cursor-pointer active:border-blue-700 focus:border-blue-700 active:border-b-2 text-center hover:bg-slate-600 p-4 transition-colors">
                 Following
               </div>
             </div>
@@ -30,7 +41,7 @@ const Hero = () => {
               <label htmlFor="text">
                 <img
                   className="h-10 w-11 rounded-full"
-                  src="https://picsum.photos/10?random=2"
+                  src={profile ? profile : "src/assets/react.svg"}
                   width={12}
                   height={12}
                   alt="userPic"
@@ -53,7 +64,8 @@ const Hero = () => {
                   name="file"
                   id="file"
                   ref={inputFile}
-                  style={{ display: "none" }}
+                  className="hidden"
+                  onChange={onProfile}
                 />
               </div>
               <div className="post">
